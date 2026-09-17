@@ -28,22 +28,7 @@ h1 {
 	font-size: var(--font-xl);
 }
 
-body.down > header > h1 {
-	height: 0;
-}
-
-body.down > header > p {
-	height: 0;
-}
-
-body.down > header > nav > h2 {
-	display: block;
-}
-
 header {
-	position: sticky;
-	top: 0;
-	z-index: 999;
 	background: var(--header-bg);
 }
 
@@ -57,13 +42,6 @@ hgroup {
 
 	& > p {
 		padding: 0.5rem 0;
-		height: 1lh;
-		transition: height 0.5s ease-out;
-	}
-
-	& > h1 {
-		height: 1lh;
-		transition: height 0.5s ease-out;
 	}
 }
 
