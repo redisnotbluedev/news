@@ -8,7 +8,8 @@
 
 	--font-sm: 0.825rem;
 	--font-md: 1rem;
-	--font-lg: 3rem;
+	--font-lg: 2rem;
+	--font-xl: 3rem;
 
 	--font-serif: "Times New Roman", Times, serif;
 	--font-sans: Arial, Helvetica, sans-serif;
@@ -24,7 +25,26 @@
 }
 
 h1 {
-	font-size: var(--font-lg);
+	font-size: var(--font-xl);
+}
+
+body.down > header > h1 {
+	height: 0;
+}
+
+body.down > header > p {
+	height: 0;
+}
+
+body.down > header > nav > h2 {
+	display: block;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	background: var(--header-bg);
 }
 
 hgroup {
@@ -33,24 +53,37 @@ hgroup {
 	align-items: center;
 	justify-content: center;
 	border-bottom: var(--border);
+	transform: translateY(0);
 
 	& > p {
 		padding: 0.5rem 0;
+		height: 1lh;
+		transition: height 0.5s ease-out;
+	}
+
+	& > h1 {
+		height: 1lh;
+		transition: height 0.5s ease-out;
 	}
 }
 
 nav {
-	position: sticky;
-	top: 0;
-	z-index: 999;
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+	border-bottom: var(--border);
+
+	& > h2 {
+		font-family: var(--font-serif);
+		font-size: var(--font-lg);
+		display: none;
+	}
 
 	& > ul {
+		flex: 1;
 		list-style-type: none;
 		display: flex;
 		justify-content: center;
-		padding: 0.5rem;
-		border-bottom: var(--border);
-		background: var(--header-bg);
 
 		& > li:not(:last-child) {
 			border-right: var(--border);
