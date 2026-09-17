@@ -4,20 +4,22 @@
 
 	--text-primary: #000;
 	--text-secondary: #333;
+	--text-tertiary: #555;
 
-	--font-sm: 1rem;
-	--font-md: 1.5rem;
-	--font-lg: 2rem;
+	--font-sm: 0.825rem;
+	--font-md: 1rem;
+	--font-lg: 3rem;
 
 	--font-serif: "Times New Roman", Times, serif;
 	--font-sans: Arial, Helvetica, sans-serif;
 }
 
-*, *::after, *::before {
+:where(*, *::after, *::before) {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 	font-family: var(--font-sans);
+	font-size: var(--font-md);
 	color: var(--text-primary);
 }
 
@@ -25,28 +27,40 @@ h1 {
 	font-size: var(--font-lg);
 }
 
-header {
-	background: var(--header-color);
-	height: 20%;
-	padding: 1rem 0;
+hgroup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-bottom: var(--border);
 
-	& > hgroup {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		border-bottom: var(--border);
-
-		& > p {
-			padding-bottom: 1rem;
-		}
+	& > p {
+		padding: 0.5rem 0;
 	}
+}
+
+nav {
+	position: sticky;
+	top: 0;
+	z-index: 999;
 
 	& > ul {
 		list-style-type: none;
 		display: flex;
-		gap: 2rem;
 		justify-content: center;
+		padding: 0.5rem;
+		border-bottom: var(--border);
+		background: var(--header-bg);
+
+		& > li:not(:last-child) {
+			border-right: var(--border);
+			margin-right: 1rem;
+			padding-right: 1rem;
+		}
+
+		& > li > a {
+			text-decoration: none;
+		}
 	}
 }
 
