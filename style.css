@@ -1,0 +1,60 @@
+:root {
+	--header-bg: #fff;
+	--border: 1px solid #0005;
+
+	--text-primary: #000;
+	--text-secondary: #333;
+
+	--font-sm: 1rem;
+	--font-md: 1.5rem;
+	--font-lg: 2rem;
+
+	--font-serif: "Times New Roman", Times, serif;
+	--font-sans: Arial, Helvetica, sans-serif;
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-sans);
+	color: var(--text-primary);
+}
+
+h1 {
+	font-size: var(--font-lg);
+}
+
+header {
+	background: var(--header-color);
+	height: 20%;
+	padding: 1rem 0;
+
+	& > hgroup {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-bottom: var(--border);
+
+		& > p {
+			padding-bottom: 1rem;
+		}
+	}
+
+	& > ul {
+		list-style-type: none;
+		display: flex;
+		gap: 2rem;
+		justify-content: center;
+	}
+}
+
+.small {
+	font-size: var(--font-sm);
+	color: var(--text-secondary);
+}
+
+.serif {
+	font-family: var(--font-serif);
+}
