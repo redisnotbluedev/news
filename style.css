@@ -149,14 +149,34 @@ main {
 		font-size: var(--font-lg);
 	}
 
-	& > div.author {
+	& > div.data {
 		display: flex;
+		gap: 1rem;
 
 		& > img {
 			height: 2lh;
 			width: 2lh;
 			object-fit: cover;
 			border-radius: 50%;
+		}
+
+		& > div > p {
+			color: var(--text-secondary);
+			margin: 0;
+
+			& > a {
+				color: var(--bg-primary);
+				text-decoration: none;
+				font-weight: 600;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		& > div > p:last-child { /* Shut up I'm under time pressure */
+			color: var(--text-tertiary);
 		}
 	}
 
