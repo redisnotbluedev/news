@@ -1,8 +1,11 @@
 const body = document.body;
 const share = document.getElementById("share");
 const button = document.getElementById("top");
+let isToTop = false;
 
 window.addEventListener("scroll", () => {
+	if (isToTop) return;
+
 	if (window.scrollY > 0) {
 		body.classList.toggle("down", true);
 	} else {
@@ -19,10 +22,15 @@ share.addEventListener("click", () => {
 });
 
 button.addEventListener("click", () => {
+	isToTop = true;
 	window.scrollTo({
 		top: 0,
 		left: 0,
 		behavior: "smooth"
 	});
-	body.classList.toggle("down", false);
-})
+
+	window.addEventListener("scrollend", () => {
+		body.classList.remove("down");
+		isToTop = false;
+	}, { once: true });
+});

@@ -233,6 +233,7 @@ button.top {
 	width: 3rem;
 	height: 3rem;
 	font-weight: bold;
+	border: none;
 }
 
 body.down > button.top {
