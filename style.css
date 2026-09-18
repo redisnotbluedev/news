@@ -31,8 +31,18 @@ h1 {
 	font-size: var(--font-xl);
 }
 
+body.down > header.scroll {
+	top: 0;
+}
+
+body.down > header.static {
+	transform: translateY(-100%);
+}
+
 header.static {
 	background: var(--bg-header);
+	transform: translateY(0);
+	transition: transform 0.3s;
 
 	& > hgroup {
 		display: flex;
@@ -40,7 +50,6 @@ header.static {
 		align-items: center;
 		justify-content: center;
 		border-bottom: var(--border);
-		transform: translateY(0);
 
 		& > p {
 			padding: 0.5rem 0;
@@ -79,11 +88,18 @@ header.static {
 }
 
 header.scroll {
-	display: none;
+	display: grid;
 	grid-template-columns: 1fr auto 1fr;
 	align-items: center;
 	padding: 0.5rem 1rem;
 	border-bottom: var(--border);
+	position: fixed;
+	top: -100%;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background: var(--bg-header);
+	transition: top 0.3s;
 
 	& > h2 {
 		font-size: var(--font-lg);
