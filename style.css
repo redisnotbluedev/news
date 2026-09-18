@@ -132,3 +132,11 @@ header.scroll {
 .serif {
 	font-family: var(--font-serif);
 }
+
+main {
+	padding: 0.5rem 16rem;
+
+	& > h2 {
+		font-size: var(--font-lg);
+	}
+}
